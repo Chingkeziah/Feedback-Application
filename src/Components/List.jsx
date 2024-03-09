@@ -2,7 +2,7 @@ import ReviewItem from "./Reviewitem"
 
 function List({reviews, deleteReview}) {
 
-    // if theres no review i.e the state is ''
+    // if there is no review i.e the state is ''
 
     if(!reviews || reviews.length === 0){
       return <p>No reviews yet!</p>
