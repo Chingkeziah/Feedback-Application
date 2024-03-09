@@ -57,7 +57,7 @@ function ReviewForm({handleAdd}) {
         <form onSubmit={formSubmit}>
             <h3>Kindly drop a Review for our service you just experienced.</h3>
             <Rating ratingState={(rating) => setRating(rating)} />
-            <br />
+            <br /><br />
             <div className="input-group">
                 <input type="text"value={text} placeholder="Write your review here" onChange={textHandler} />
                 
@@ -65,7 +65,7 @@ function ReviewForm({handleAdd}) {
                     Submit
                 </Button>
             </div>
-            {msg && <div className="message" style={spanStyle}>{msg}</div>}
+            {msg && (<span className="message" style={spanStyle}>{msg}</span>)}
         </form>
       </div>
     </div>
