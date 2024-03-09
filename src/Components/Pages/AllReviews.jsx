@@ -8,7 +8,7 @@ import { v4 as uuid} from 'uuid'
 import { FaHouseDamage } from "react-icons/fa";
 import Button from "../layout/Button";
 
-function Review() {
+    function AllReviews() {
     const [review, setReview] = useState(data)
     // function to delete review
   const deleteReview =  (id) => {
@@ -20,7 +20,7 @@ function Review() {
   // function to add a review
   const AddReview = (newReview) => {
     newReview.id=uuid()
-    setReview([newReview])
+    setReview([newReview, ...review])
   }
   return (
     <>
@@ -45,4 +45,4 @@ function Review() {
   )
 }
 
-export default Review
+export default AllReviews

@@ -12,7 +12,7 @@ function About() {
         <br />
       </div>
       <div className="about-link">
-        <Link to="/home">
+        <Link to="/">
           <FaHouseDamage size={40} />
         </Link>
       </div>
