@@ -8,7 +8,7 @@ const spanStyle = {
   fontStyle: 'italic'
 }
 
-function ReviewForm() {
+function ReviewForm({handleAdd}) {
   // sate for input text
     const [text, setText] = useState('')
 
