@@ -7,8 +7,10 @@ import ReviewForm from "../ReviewForm";
 import { v4 as uuid} from 'uuid'
 import { FaHouseDamage } from "react-icons/fa";
 import Button from "../layout/Button";
+import { useNavigate } from "react-router-dom"
 
 function Review() {
+  const navigate = useNavigate()
     const [review, setReview] = useState(data)
     // function to delete review
   const deleteReview =  (id) => {
@@ -37,9 +39,9 @@ function Review() {
         </div>
 
       <div className="container">
-        {/* <Button type='button' variant='secondary' onClick={() => navigate("/review")}>
-            All Reviews
-        </Button> */}
+        <Button type='button' variant='secondary' onClick={() => navigate("/all-reviews")}>
+          All Reviews
+        </Button>
       </div>
     </>
   )
