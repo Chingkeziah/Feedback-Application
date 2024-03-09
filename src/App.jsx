@@ -5,6 +5,7 @@ import List from "./Components/List"
 import ReviewStats from "./Components/ReviewStats"
 import ReviewForm from "./Components/ReviewForm"
 import { v4 as uuid} from 'uuid'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 function App() {
   const [review, setReview] = useState(data)
