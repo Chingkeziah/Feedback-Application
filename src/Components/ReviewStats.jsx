@@ -9,10 +9,12 @@ function ReviewStats({reviews}) {
    average = average.toFixed(1)
   return (
     <>
-      <div className="review-stats">
-        <p>Reviews: {reviews.length}</p>
+      <div className="box">
+        <div className="review-stats">
+          <p>Reviews: {reviews.length}</p>
 
-        <p>{isNaN(average) ? 0 : average}</p>
+          <p>{isNaN(average) ? 0 : average}</p>
+        </div>
       </div>
     </>
   )

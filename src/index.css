@@ -256,3 +256,6 @@ input:focus {
   font-style: italic;
   
 }
+.box {
+  margin: 10px 30px 10px 30px;
+}

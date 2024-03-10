@@ -12,6 +12,7 @@ import { v4 as uuid} from 'uuid'
 
 function AllReviews({handleAdd}) {
 
+
   const [review, setReview] = useState(data)
   // function to delete review
 const deleteReview =  (id) => {
