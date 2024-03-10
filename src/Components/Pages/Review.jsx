@@ -20,7 +20,11 @@ function Review({ setReview, review}) {
    // function to delete review
   const deleteReview =  (id) => {
     if(window.confirm('Are you sure, you want to delete this review?')){
-      setReview(review.filter((review) => review.id !== id))
+      setCurrentReview({
+        id: '',
+        text:'',
+        rating:''
+      })
     }
   }
 
