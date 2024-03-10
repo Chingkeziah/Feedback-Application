@@ -4,10 +4,13 @@ import Home from "./Components/Pages/Home";
 import Review from "./Components/Pages/Review";
 import About from "./Components/Pages/About";
 import AllReviews from "./Components/Pages/AllReviews";
+import reviewData from "./Data/reviewData";
+import { useState } from "react";
 
 function App() {
+ const [review, setReview]= useState(reviewData)
  
-  return (
+   return (
     <>
     
       <Header text="Review Application" />
@@ -17,8 +20,8 @@ function App() {
             {/* "/" tells the browser which page to render once a site is opened */}
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/review" element={<Review />} />
-              <Route path="/all-reviews" element={<AllReviews />} />
+              <Route path="/review" element={<Review setReview={setReview} review={review}  />} />
+              <Route path="/all-reviews" element={<AllReviews review={review}  setReview={setReview} />} />
           </Routes>
         </Router>
           

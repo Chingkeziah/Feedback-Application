@@ -5,15 +5,16 @@ import data from "../../Data/reviewData"
 import List from "../List";
 import ReviewStats from "../ReviewStats";
 import ReviewForm from "../ReviewForm";
+
 import { v4 as uuid} from 'uuid'
 
 
 
 
-function AllReviews() {
+function AllReviews({review, setReview}) {
 
 
-  const [review, setReview] = useState(data)
+
   // function to delete review
 const deleteReview =  (id) => {
   if(window.confirm('Are you sure, you want to delete this review?')){
@@ -32,6 +33,7 @@ const deleteReview =  (id) => {
             <div className="cards">
                 <ReviewStats reviews={review} />
                 <List reviews={review} deleteReview={deleteReview} />
+               
             </div>
         <div className="container">
           <div className="about-link">

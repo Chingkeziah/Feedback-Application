@@ -9,18 +9,21 @@ const spanStyle = {
   fontStyle: 'italic'
 }
 
-function ReviewForm({handleAdd}) {
+function ReviewForm({handleAdd, review, setReview}) {
   // sate for input text
-    const [text, setText] = useState('')
+  const [text,setText] = useState('')
+
 
     // state for btn (disabled)
       const [btnDisabled, setBtnDisabled] = useState(true)
     
     // state for validation (character) 
       const [msg, setMsg] = useState('')
+    
+    //state to handle rating from users
+    const [rating, setRating] = useState(0)
 
-    //state to handle ratings from users
-    const [rating, setRating] = useState(8)
+   
 
 //  function to update the text state (in the input field) 
 // and also validate the text characters to be above 20 before button will be enables
@@ -48,6 +51,7 @@ function ReviewForm({handleAdd}) {
         }
         handleAdd(newReview)
         setText('')
+        setReview([...review, newReview])
       }
     }
  

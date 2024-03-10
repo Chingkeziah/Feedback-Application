@@ -1,17 +1,22 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import data from "../../Data/reviewData"
-import List from "../List";
-import ReviewStats from "../ReviewStats";
 import ReviewForm from "../ReviewForm";
 import { v4 as uuid} from 'uuid'
 import { FaHouseDamage } from "react-icons/fa";
 import Button from "../layout/Button";
 import { useNavigate } from "react-router-dom"
+import Reviewitem from "../Reviewitem";
+import { FaTimes } from "react-icons/fa"
 
-function Review() {
+function Review({ setReview, review}) {
   const navigate = useNavigate()
-    const [review, setReview] = useState(data)
+  const [currentReview, setCurrentReview] = useState(
+    {
+    id: '',
+    text:'',
+    rating:''
+  }
+)
    // function to delete review
   const deleteReview =  (id) => {
     if(window.confirm('Are you sure, you want to delete this review?')){
@@ -24,13 +29,18 @@ function Review() {
   const AddReview = (newReview) => {
     newReview.id=uuid()
     setReview([newReview])
+    setCurrentReview(newReview)
+    console.log(newReview)
   }
+ 
   return (
     <>
-        <ReviewForm handleAdd={AddReview} />
+        <ReviewForm review={review} setReview={setReview}  handleAdd={AddReview}/>
           <div className="container">
-            <ReviewStats reviews={review} />
-            <List reviews={review} deleteReview={deleteReview} />
+            {/* <ReviewStats reviews={review} /> */}
+            {/* <List reviews={currentReview} deleteReview={deleteReview} /> */}
+           {currentReview.text &&  <Reviewitem review={currentReview} deleteReview={deleteReview} />}
+          
           </div>  
       <div className="container">
         <div className="about-link">
