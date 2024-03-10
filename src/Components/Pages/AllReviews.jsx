@@ -10,7 +10,7 @@ import { v4 as uuid} from 'uuid'
 
 
 
-function AllReviews({handleAdd}) {
+function AllReviews() {
 
 
   const [review, setReview] = useState(data)

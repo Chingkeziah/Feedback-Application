@@ -12,12 +12,12 @@ import { useNavigate } from "react-router-dom"
 function Review() {
   const navigate = useNavigate()
     const [review, setReview] = useState(data)
-    // function to delete review
-  // const deleteReview =  (id) => {
-  //   if(window.confirm('Are you sure, you want to delete this review?')){
-  //     setReview(review.filter((review) => review.id !== id))
-  //   }
-  // }
+   // function to delete review
+  const deleteReview =  (id) => {
+    if(window.confirm('Are you sure, you want to delete this review?')){
+      setReview(review.filter((review) => review.id !== id))
+    }
+  }
 
   
   // function to add a review
@@ -28,7 +28,10 @@ function Review() {
   return (
     <>
         <ReviewForm handleAdd={AddReview} />
-            
+          <div className="container">
+            <ReviewStats reviews={review} />
+            <List reviews={review} deleteReview={deleteReview} />
+          </div>  
       <div className="container">
         <div className="about-link">
             <Link to="/">
