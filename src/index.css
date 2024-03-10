@@ -43,7 +43,7 @@ header {
   color: #333;
   border-radius: 15px;
   padding: 40px 50px;
-  margin: 20px 0;
+  margin: 20px 20px;
   position: relative;
 }
 
@@ -235,7 +235,23 @@ input:focus {
   }
 }
 
+@media (min-width: 800px) {
+  .rating li {
+    margin: 10px 3px;
+  }
 
+.review {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      justify-content: center;
+      align-items: center;
+  }
+
+    .input-group input {
+    width: 80%;
+  }
+}
 .text {
   font-style: italic;
   

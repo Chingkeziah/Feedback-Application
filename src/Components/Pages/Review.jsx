@@ -13,12 +13,13 @@ function Review() {
   const navigate = useNavigate()
     const [review, setReview] = useState(data)
     // function to delete review
-  const deleteReview =  (id) => {
-    if(window.confirm('Are you sure, you want to delete this review?')){
-      setReview(review.filter((review) => review.id !== id))
-    }
-  }
+  // const deleteReview =  (id) => {
+  //   if(window.confirm('Are you sure, you want to delete this review?')){
+  //     setReview(review.filter((review) => review.id !== id))
+  //   }
+  // }
 
+  
   // function to add a review
   const AddReview = (newReview) => {
     newReview.id=uuid()
@@ -27,20 +28,17 @@ function Review() {
   return (
     <>
         <ReviewForm handleAdd={AddReview} />
-            <div className="container">
-                <ReviewStats reviews={review} />
-                <List reviews={review} deleteReview={deleteReview} />
-            </div>
-
+            
+      <div className="container">
         <div className="about-link">
             <Link to="/">
             <FaHouseDamage size={40} />
             </Link>
         </div>
-
+      </div>
       <div className="container">
         <Button type='button' variant='secondary' onClick={() => navigate("/all-reviews")}>
-          All Reviews
+         See All Reviews
         </Button>
       </div>
     </>

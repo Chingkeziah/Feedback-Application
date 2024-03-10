@@ -20,44 +20,27 @@ const deleteReview =  (id) => {
   }
 }
 
-// function to add a review
-const AddReview = (newReview) => {
-  newReview.id=uuid()
-  setReview([newReview, ...review])
-}
-
-// function to submit a review
-const formSubmit = (e) => {
-  e.preventDefault()
-  if(text.trim().length > 20){
-    const newReview = {
-      text,
-      rating
-    }
-    handleAdd(newReview)
-    setText('')
-  }
-}
+// // function to add a review
+// const AddReview = (newReview) => {
+//   newReview.id=uuid()
+//   setReview([newReview, ...review])
+// }
 
   return (
     <>
-        <ReviewForm handleAdd={AddReview} />
-            <div className="container">
+            <div className="cards">
                 <ReviewStats reviews={review} />
                 <List reviews={review} deleteReview={deleteReview} />
             </div>
-
-        <div className="about-link">
-            <Link to="/">
-            <FaHouseDamage size={40} />
-            </Link>
+        <div className="container">
+          <div className="about-link">
+              <Link to="/">
+              <FaHouseDamage size={40} />
+              </Link>
+          </div>
         </div>
 
-      <div className="container">
-        {/* <Button type='button' variant='secondary' onClick={() => navigate("/review")}>
-            All Reviews
-        </Button> */}
-      </div>
+     
     </>
   )
 }
