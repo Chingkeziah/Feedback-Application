@@ -41,8 +41,7 @@ function Review({ setReview, review}) {
     <>
         <ReviewForm review={review} setReview={setReview}  handleAdd={AddReview}/>
           <div className="container">
-            {/* <ReviewStats reviews={review} /> */}
-            {/* <List reviews={currentReview} deleteReview={deleteReview} /> */}
+          
            {currentReview.text &&  <Reviewitem review={currentReview} deleteReview={deleteReview} />}
           
           </div>  
