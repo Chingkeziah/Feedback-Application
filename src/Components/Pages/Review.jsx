@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import ReviewForm from "../ReviewForm";
 import { v4 as uuid} from 'uuid'
 import { FaHouseDamage } from "react-icons/fa";
-import Button from "../layout/Button";
+import Button from "../layout/Button"; 
 import { useNavigate } from "react-router-dom"
 import Reviewitem from "../Reviewitem";
 import { FaTimes } from "react-icons/fa"
